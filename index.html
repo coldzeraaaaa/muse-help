@@ -1,59 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>Muse Help Portal</title>
+  <title>MUSE-HLP-CENTER</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
     }
-    .box {
-      max-width: 900px;
-      margin: auto;
+
+    .container {
+        display: flex;
+        height: 100vh;
     }
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: 1px solid #ddd;
-      margin-top: 20px;
+
+    /* 左侧内容 */
+    .left-panel {
+        width: 40%;
+        background: #ffffff;
+        padding: 40px;
+        box-sizing: border-box;
+        border-right: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      background: #2d6cdf;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
+
+    .left-panel .text-box {
+        font-size: 20px;
+        line-height: 34px;
+        color: #333;
+        padding: 30px;
+        border: 2px solid #bbb;
+        background: #fafafa;
+        border-radius: 8px;
+    }
+
+    /* 右侧区域 */
+    .right-panel {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .section {
+        background: #ffffff;
+        border: 1px solid #ddd;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+    }
+
+    .section h2 {
+        margin-top: 0;
+    }
+
+    .link-box {
+        margin-top: 15px;
+    }
+
+    .link-box a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #0366d6;
+        font-size: 17px;
+    }
+
+    .link-box a:hover {
+        text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Muse Help Center</h1>
 
-    <h2>📌 使用指南</h2>
-    <p>
-      1. 提交工单时会自动为你创建一个 YouTrack 报告者账号。<br>
-      2. 提交完成后，可点击下方按钮登录并查看进度。
-    </p>
+<div class="container">
 
-    <a class="btn" href="https://muse-help.youtrack.cloud/login" target="_blank">
-      登录 YouTrack
-    </a>
-
-    <h2>📝 提交工单</h2>
-
-    <script src="https://muse-help.youtrack.cloud/static/simplified/form/form-entry.js?auto=false"></script>
-<div style="position: fixed; bottom: 20px; right: 20px;"></div>
-<script>
-  YTFeedbackForm.renderFeedbackButton(
-    document.currentScript.previousElementSibling,
-    {backendURL: 'https://muse-help.youtrack.cloud', formUUID: '05ef384a-df26-4101-bd1e-0b41495d8b63', theme: 'light', language: 'zh'}
-  );
-</script>
+  <!-- 左边 -->
+  <div class="left-panel">
+    <div class="text-box">
+      可以通过提交错误的方式直接创建一个账户，账户信息会发送至您的预留邮箱。
+    </div>
   </div>
+
+  <!-- 右边 -->
+  <div class="right-panel">
+
+    <!-- 登录 / 重置密码 -->
+    <div class="section">
+      <h2>账户登录 & 重置密码</h2>
+
+      <div class="link-box">
+        <a href="https://muse-help.youtrack.cloud/" target="_blank">👉 登录 YouTrack Helpdesk</a>
+
+        <a href="https://muse-help.youtrack.cloud/hub/auth/restore?response_type=token&client_id=3618ffa8-7918-424a-81d4-d8be310c1926&redirect_uri=https:%2F%2Fmuse-help.myjetbrains.com%2Foauth&scope=3618ffa8-7918-424a-81d4-d8be310c1926%20Upsource%20TeamCity%20YouTrack%2520Slack%2520Integration%200-0-0-0-0&state=a804205c-13fe-463d-b4b6-943b846369c4"
+           target="_blank">👉 重置密码</a>
+      </div>
+    </div>
+
+    <!-- 提交错误报告 -->
+    <div class="section">
+      <h2>提交错误报告</h2>
+
+      <div class="link-box">
+
+        <a href="https://muse-help.youtrack.cloud/form/dc797eed-4bbd-47e1-9b90-e726457833dc"
+           target="_blank">🛠 软件类错误</a>
+
+        <a href="https://muse-help.youtrack.cloud/form/05ef384a-df26-4101-bd1e-0b41495d8b63"
+           target="_blank">🔑 许可服务类错误</a>
+
+        <a href="https://muse-help.youtrack.cloud/form/52e9d45c-8694-41f6-b3c0-a7bc51e1b5bd"
+           target="_blank">📄 普通类型错误</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
