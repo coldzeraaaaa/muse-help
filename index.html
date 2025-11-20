@@ -46,7 +46,14 @@
 
     <h2>📝 提交工单</h2>
 
-    <iframe src="https://muse-help.youtrack.cloud/form/xxx"></iframe>
+    <script src="https://muse-help.youtrack.cloud/static/simplified/form/form-entry.js?auto=false"></script>
+<div style="position: fixed; bottom: 20px; right: 20px;"></div>
+<script>
+  YTFeedbackForm.renderFeedbackButton(
+    document.currentScript.previousElementSibling,
+    {backendURL: 'https://muse-help.youtrack.cloud', formUUID: '05ef384a-df26-4101-bd1e-0b41495d8b63', theme: 'light', language: 'zh'}
+  );
+</script>
   </div>
 </body>
 </html>
